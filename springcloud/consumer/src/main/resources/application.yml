@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8003
 spring:
   application:
     name: consumer
@@ -10,7 +10,7 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:8000/eureka
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka
       instance:
         lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
         lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
