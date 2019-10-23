@@ -2,7 +2,6 @@ package com.study.common.vo.test;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -14,7 +13,6 @@ import lombok.Data;
  * @Since : 1.0
  * @Copyright : 四川去哪游科技有限公司
  */
-@Builder
 @Data
 @ApiModel("用户交易实体")
 public class User {
@@ -26,4 +24,12 @@ public class User {
 
     @ApiModelProperty("用户名")
     private String username;
+
+    public User() {
+    }
+
+    public User(int id, String username) {
+        this.id = id;
+        this.username = username;
+    }
 }
