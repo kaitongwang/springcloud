@@ -106,7 +106,7 @@ public class AreaServiceImpl implements AreaService {
         for (AreaPo areaPo1 : areaPos1) {
             StringBuffer stringBuffer = new StringBuffer(configValue.tencent_getChildren_url);
 
-            stringBuffer.append("?key=" + configValue.tencent_key+"&id="+areaPo1.getParentCode());
+            stringBuffer.append("?key=" + configValue.tencent_key+"&id="+areaPo1.getCode());
             System.out.println("请求地址为："+stringBuffer);
             TencentResult forObject = restTemplate.getForObject(stringBuffer.toString(), TencentResult.class);
 
@@ -140,7 +140,7 @@ public class AreaServiceImpl implements AreaService {
 
                     areaPo.setLat(tencentAreaVo.getLocation().getLat());
                     areaPo.setLng(tencentAreaVo.getLocation().getLng());
-                    areaPo.setParentCode(areaPo1.getParentCode());
+                    areaPo.setParentCode(areaPo1.getCode());
                     areaPos.add(areaPo);
 
                 }
