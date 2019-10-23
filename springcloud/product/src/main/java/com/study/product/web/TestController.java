@@ -28,11 +28,6 @@ public class TestController {
     @ApiOperation(value = "获取用户信息")
     @GetMapping("/get")
     public Result<User>  getUser(){
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         User wkt = new User(1,"wkt");
         log.info("查询用户信息为：{}",wkt);
         return Result.returnSuccess(wkt);
