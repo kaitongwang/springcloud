@@ -23,6 +23,9 @@
     <modules>
         <module>eureka</module>
         <module>common</module>
+        <module>product</module>
+        <module>consumer</module>
+        <module>zuul</module>
     </modules>
 
     <dependencies>
