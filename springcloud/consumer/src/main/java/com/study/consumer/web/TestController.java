@@ -1,4 +1,4 @@
-package com.study.base.web;
+package com.study.consumer.web;
 
 import com.study.common.base.Result;
 import io.swagger.annotations.Api;

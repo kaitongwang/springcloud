@@ -9,6 +9,7 @@
         <module>admin_service</module>
         <module>common</module>
         <module>base</module>
+        <module>consumer</module>
     </modules>
 
     <parent>
