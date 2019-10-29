@@ -1,0 +1,25 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: admin
+  security:
+    user:
+      name: wkt
+      password: wkt123456
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka
+      instance:
+        lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+        lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+        prefer-ip-address: true
+        ip-address: 127.0.0.1
+        instance-id: ${spring.application.name}:${server.port}
+

@@ -1,19 +1,17 @@
 server:
   port: 8001
-
-eureka:
-  instance:
-    hostname: 127.0.0.1
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-     defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
-
 spring:
   application:
     name: eureka
-security:
-  user:
-    name: wkt
-    password: wkt123456
+#  security:
+#    user:
+#      name: wkt
+#      password: wkt123456
+eureka:
+  instance:
+   hostname: 127.0.0.1
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone:  http://${eureka.instance.hostname}:${server.port}/eureka
