@@ -7,6 +7,31 @@ spring:
     user:
       name: wkt
       password: wkt123456
+  mail:
+      #端口
+    host: smtp.qq.com
+    username: 1825793811@qq.com
+    password: aaruournfvllegff
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  boot:
+    admin:
+      notify:
+        mail:
+          from: 1825793811@qq.com
+          to: 1825793811@qq.com
+          enabled: true
+
+
+
+
+
 
 eureka:
   instance:
