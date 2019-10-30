@@ -27,7 +27,7 @@ public class TestController {
     @ApiOperation("测试接口")
     @GetMapping("/get")
     public Result get(){
-        log.info("调用测试接口");
+        log.info("调用测试接口comsumer");
         return Result.returnSuccess();
     }
 }

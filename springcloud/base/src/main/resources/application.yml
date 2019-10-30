@@ -79,7 +79,7 @@ logging:
       htlb:
         log:
           mapper: debug
-  file: D:/Logs/output.log
+  file: D:/Logs/base/output.log
 management:
   endpoints:
     web:

@@ -2,7 +2,7 @@ server:
   port: 8004
 spring:
   application:
-    name: base
+    name: consumer
 
 eureka:
   instance:
@@ -35,6 +35,17 @@ swagger:
       description: Api 文档
     host: 127.0.0.1
     path-mapping: /
+
+#日志配置
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: info
+    com:
+      htlb:
+        log:
+          mapper: debug
+  file: D:/Logs/consumer/output.log
 
 management:
   endpoints:
