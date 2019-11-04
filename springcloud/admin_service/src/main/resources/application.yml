@@ -25,7 +25,7 @@ spring:
       notify:
         mail:
           from: 1825793811@qq.com
-          to: 1825793811@qq.com
+          to: 18894491765@163.com
           enabled: true
 
 

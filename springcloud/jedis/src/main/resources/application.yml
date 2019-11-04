@@ -58,7 +58,7 @@ logging:
       htlb:
         log:
           mapper: debug
-  file: D:/Logs/consumer/jedis.log
+  file: /root/logs/jedis/output.log
 
 management:
   endpoints:

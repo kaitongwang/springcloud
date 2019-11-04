@@ -13,6 +13,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  * @Since : 1.0
  * @Copyright : 四川去哪游科技有限公司
  */
+
 @EnableEurekaServer
 @SpringBootApplication
 public class EurekaApplication {
