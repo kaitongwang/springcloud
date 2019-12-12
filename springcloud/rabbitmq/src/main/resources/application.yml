@@ -1,0 +1,66 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: rabbitmq
+  rabbitmq:
+    host: www.wkt.red
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true  # 消息发送到交换机确认机制。是否确认回调
+    publisher-returns: true  # 消息发送到交换机确认机制。是否返回回调
+    listener:
+      simple:
+        acknowledge-mode: auto   # 应答模式。分别： auto 自动; manual 手动应答 ; none 效率高，存在丢失大量消息的风险
+        concurrency: 1 # 最小消费者数量
+        max-concurrency:  5 # 最大消费者数量
+        default-requeue-rejected: false # 被拒绝后是否重新入队
+        retry:
+          stateless: true  #重试是无国籍还是有状态
+          enabled: true    #是否开启重试机制
+          multiplier: 1 # 乘数应用于先前的重试间隔
+          initial-interval: 1000ms  # 重试次数之间的时间间隔
+          max-attempts:  5  # 传递消息最大尝试次数
+          max-interval: 10000ms  # 最长尝试次数时间
+
+
+
+
+
+
+
+
+
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka
+      instance:
+        lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+        lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+        prefer-ip-address: true
+        ip-address: 127.0.0.1
+        instance-id: ${spring.application.name}:${server.port}
+
+swagger:
+  print-init: true
+  enabled: true
+  docket:
+    base-package: com.study.rabbimq.web
+    api-info:
+      contact:
+        email: 1825793811@qq.com
+        name: Kt.w
+        url:  https://github.com/kaitongwang
+      title: 基础数据api
+      version: 1.1.0
+      description: Api 文档
+    host: 127.0.0.1
+    path-mapping: /
