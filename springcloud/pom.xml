@@ -11,6 +11,8 @@
         <module>base</module>
         <module>consumer</module>
         <module>jedis</module>
+        <module>rabbitmq</module>
+        <module>rabbitmqConsumer</module>
     </modules>
 
     <parent>
