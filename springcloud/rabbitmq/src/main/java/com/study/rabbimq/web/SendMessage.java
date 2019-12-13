@@ -54,5 +54,11 @@ public class SendMessage {
 
     }
 
+    @PostMapping("/send3")
+    public Result send3(@RequestBody Hello hello){
+        log.info("发送消息为：{}", JSON.toJSONString(hello));
+        Result send3 = sendMessageService.send3(hello);
+        return send3;
 
+    }
 }

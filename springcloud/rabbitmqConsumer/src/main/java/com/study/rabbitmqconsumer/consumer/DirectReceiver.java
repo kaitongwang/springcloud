@@ -1,5 +1,6 @@
 package com.study.rabbitmqconsumer.consumer;
 
+import com.alibaba.fastjson.JSON;
 import com.study.common.rabbitmq.Hello;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.Queue;
@@ -81,7 +82,19 @@ public class DirectReceiver {
         System.out.println("进入了死信队列");
         log.info("Hello:{}",hello);
 
+    }
 
+    @RabbitListener(queues = "topic.Queue2")
+    @RabbitHandler
+    public void topicQueue2(Hello hello){
 
+        System.out.println("全量匹配,:"+JSON.toJSONString(hello));
+    }
+
+    @RabbitListener(queues = "topic.Queue1")
+    @RabbitHandler
+    public void topicQueue1(Hello hello){
+
+        System.out.println("后面只允许与一个单词,:"+JSON.toJSONString(hello));
     }
 }

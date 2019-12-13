@@ -27,4 +27,7 @@ public interface SendMessageService {
     Result send2(Hello hello);
 
 
+
+    Result send3(Hello hello);
+
 }

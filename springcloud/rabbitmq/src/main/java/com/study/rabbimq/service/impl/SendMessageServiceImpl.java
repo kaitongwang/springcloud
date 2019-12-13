@@ -58,11 +58,17 @@ public class SendMessageServiceImpl implements SendMessageService {
         for (int i=0;i<50;i++){
 
             hello.setMessage(i+"");
-            rabbitTemplate.convertAndSend("work-queue",hello);
+            rabbitTemplate.convertAndSend("work-queue","",hello);
         }
 
        return Result.returnSuccess();
     }
 
+    @Override
+    public Result send3(Hello hello) {
 
+        rabbitTemplate.convertAndSend("TopicExchange","topic.nmsi.nihdidb",hello);
+
+        return Result.returnSuccess();
+    }
 }
