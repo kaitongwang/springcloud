@@ -6,7 +6,10 @@ import com.study.jedis.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 /**
  * @ClassName : TestServiceImpl
@@ -26,6 +29,15 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public Result addUser(User user) {
+
+
+
+        RedisAtomicLong entityIdCounter = new RedisAtomicLong("orderMainCode", redisTemplate.getConnectionFactory());
+        if(Objects.isNull(entityIdCounter)){}
+        Long increment = entityIdCounter.getAndIncrement();
+
+
+        System.out.println(increment);
         log.info("添加用户信息，{}",user);
         redisTemplate.opsForValue().set(user.getName(),user);
         return Result.returnSuccess();

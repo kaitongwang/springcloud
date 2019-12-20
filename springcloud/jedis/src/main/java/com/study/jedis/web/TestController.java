@@ -2,6 +2,7 @@ package com.study.jedis.web;
 
 import com.study.common.base.Result;
 import com.study.jedis.domain.vo.User;
+import com.study.jedis.service.SendEmailService;
 import com.study.jedis.service.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,6 +26,11 @@ public class TestController {
     @Autowired
     private TestService testService;
 
+
+    @Autowired
+    private SendEmailService sendEmailService;
+
+
     @ApiOperation("添加用户信息")
     @PostMapping("/add")
     public Result addUser(@RequestBody User user){
@@ -35,4 +41,17 @@ public class TestController {
     public Result getUser(@RequestParam  String userName){
         return    testService.getUser(userName);
     }
+
+    @ApiOperation("获取历史上的今天")
+    @PostMapping("/send")
+    public  Result sendEmail(){
+        return  sendEmailService.sendEmail();
+    }
+
+    @ApiOperation("添加邮箱")
+    @PostMapping("/addEmail")
+    public Result addEmail(@RequestParam  String userName){
+        return    sendEmailService.addEmail(userName);
+    }
+
 }
