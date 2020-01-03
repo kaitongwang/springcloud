@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.appapi.dao.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.study.appapi.domain.dto.User">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="card_id" jdbcType="VARCHAR" property="cardId" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="true_name" jdbcType="VARCHAR" property="trueName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, card_id, account, username, true_name, phone, email, password, salt, status, 
+    del_flag, create_time, update_time
+  </sql>
+
+  <select id="selectByAccount" parameterType="java.lang.String" resultMap="BaseResultMap">
+   select
+   <include refid="Base_Column_List"></include>
+   where w_user
+   where
+   account =#{account,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    where w_user
+    where
+    phone =#{phone,jdbcType=VARCHAR}
+  </select>
+</mapper>

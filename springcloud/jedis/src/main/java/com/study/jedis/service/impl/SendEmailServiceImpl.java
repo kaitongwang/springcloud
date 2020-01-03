@@ -140,13 +140,13 @@ public class SendEmailServiceImpl implements SendEmailService {
                 return Result.returnSuccess(text);
 
             } else {
-                return Result.resultFail(ResultStatus.SYSTEM_OUTAGE);
+                return Result.resultFail(ResultStatus.SUCCESS);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return Result.resultFail(ResultStatus.SYSTEM_OUTAGE);
+        return Result.resultFail(ResultStatus.SUCCESS);
     }
 
 
