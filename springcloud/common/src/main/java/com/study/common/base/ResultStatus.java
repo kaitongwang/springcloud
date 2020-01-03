@@ -21,7 +21,18 @@ public enum ResultStatus {
     PASSWORD_ERROR(13,"密码错误"),
 
     //注册异常
-    USER_ISEXIST(21,"此手机号码已被注册")
+    USER_ISEXIST(21,"此手机号码已被注册"),
+    SEND_CODE_ERROR(22,"发送验证码失败"),
+
+    //验证码
+    CODE_NOTEXIST(31,"验证码失效"),
+    CODE_ISFALSE(32,"验证码错误"),
+
+
+
+    //鉴权设置
+    NO_LOGIN_USER(41,"未登录无法操作"),
+    LOGIN_NO_USER (42,"登录身份已过期，请重新登录"),
 
 ;
     private Integer code;

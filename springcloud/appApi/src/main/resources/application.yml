@@ -3,12 +3,12 @@ server:
 spring:
   application:
     name: appapi
-    数据源配置
+#    数据源配置
   datasource:
     username: root
-    password: M9Ncehx92haser3r8usxx
+    password: love54542946
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.11.20:3306/htlb_log?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&useAffectedRows=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://www.wkt.red:3306/base?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&useAffectedRows=true&zeroDateTimeBehavior=convertToNull
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       #初始化数据库连接池
@@ -29,7 +29,7 @@ spring:
     port: 6379
     password: love54542946
     timeout: 2000
-    database: 0  # 数据库
+    database: 1  # 数据库
     jedis:
       pool:
         max-active: 50  # 最大连接数

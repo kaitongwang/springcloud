@@ -25,15 +25,15 @@
   <select id="selectByAccount" parameterType="java.lang.String" resultMap="BaseResultMap">
    select
    <include refid="Base_Column_List"></include>
-   where w_user
+   from w_user
    where
    account =#{account,jdbcType=VARCHAR}
   </select>
   <select id="selectByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"></include>
-    where w_user
+    from w_user
     where
-    phone =#{phone,jdbcType=VARCHAR}
+    phone = #{phone,jdbcType=VARCHAR}
   </select>
 </mapper>

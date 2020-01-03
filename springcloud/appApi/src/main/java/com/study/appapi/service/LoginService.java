@@ -15,9 +15,32 @@ import com.study.common.base.Result;
  */
 public interface LoginService {
 
+    /**
+     * 用户登录
+     * @param reqVo
+     * @return
+     */
     Result login(LoginReqVo reqVo);
 
+    /**
+     * 登录控制器发送验证码
+     * @param phone
+     * @return
+     */
+    Result loginSendCode(String phone);
+
+    /**
+     * 注册发送验证码
+     * @param phone
+     * @return
+     */
     Result sendCode(String phone);
 
+
+    /**
+     * 用户注册
+     * @param registereReqVo
+     * @return
+     */
     Result registere(RegistereReqVo registereReqVo);
 }

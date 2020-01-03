@@ -31,9 +31,9 @@ public class LoginController {
         return  loginService.login(reqVo);
     }
     @PostMapping("/loginSendCode")
-    public Result loginSendCode(@RequestBody LoginReqVo reqVo){
+    public Result loginSendCode(@RequestParam("phone")String phone){
 
-        return  loginService.login(reqVo);
+        return  loginService.loginSendCode(phone);
     }
 
     /**
@@ -47,7 +47,6 @@ public class LoginController {
 
     @PostMapping("registere")
     public Result registere(@RequestBody RegistereReqVo registereReqVo){
-
-
+        return loginService.registere(registereReqVo);
     }
 }
