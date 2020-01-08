@@ -7,7 +7,7 @@ spring:
     username: root
     password: love54542946
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://www.wkt.red:3306/local?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&useAffectedRows=true&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://www.wkt.red:3306/base?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&useAffectedRows=true&zeroDateTimeBehavior=convertToNull
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       #初始化数据库连接池

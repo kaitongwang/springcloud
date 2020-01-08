@@ -1,9 +1,11 @@
 package com.study.base;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @ClassName : BaseApplication
@@ -17,6 +19,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableAdminServer
 @EnableDiscoveryClient
 @SpringBootApplication
+@MapperScan("com.study.base.mapper")
 public class BaseApplication {
 
     public static void main(String[] args) {

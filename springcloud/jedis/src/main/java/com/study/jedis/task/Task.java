@@ -22,7 +22,7 @@ public class Task {
     private SendEmailService sendEmailService;
 
 
-    @Scheduled(cron = "0 0,30 7 1/1 * ? ")
+    @Scheduled(cron = "0 30 7 1/1 * ? ")
     public void test(){
         sendEmailService.sendEmail();
     }
