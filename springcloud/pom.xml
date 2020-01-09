@@ -13,7 +13,7 @@
         <module>jedis</module>
         <module>rabbitmq</module>
         <module>rabbitmqConsumer</module>
-        <module>task</module>
+        <module>management</module>
         <module>appApi</module>
     </modules>
 

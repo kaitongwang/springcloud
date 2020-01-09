@@ -1,8 +1,9 @@
-package com.study.base.web;
+package com.study.management.web;
 
-import com.study.base.domain.dto.Leader;
-import com.study.base.domain.request.LeaderListReqVo;
-import com.study.base.service.LeaderService;
+
+import com.study.management.domain.dto.Leader;
+import com.study.management.domain.request.LeaderListReqVo;
+import com.study.management.service.LeaderService;
 import com.study.common.base.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +30,6 @@ public class LeaderController {
 
     @PostMapping("/getList")
     public Result getList(@RequestBody LeaderListReqVo leaderListReqVo){
-
-
         return leaderService.getList(leaderListReqVo);
     }
 

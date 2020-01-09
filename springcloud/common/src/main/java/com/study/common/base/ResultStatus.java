@@ -14,6 +14,8 @@ public enum ResultStatus {
 
     SUCCESS(0,"操作成功"),
 
+    SYSTEM_ERROR(9,"系统休息了"),
+
     //登录控制器
     NO_USERINFO(10,"此用户不存在"),
     USERINFO_DISABLE(11,"此用户已被禁用无法登录"),
@@ -33,6 +35,10 @@ public enum ResultStatus {
     //鉴权设置
     NO_LOGIN_USER(41,"未登录无法操作"),
     LOGIN_NO_USER (42,"登录身份已过期，请重新登录"),
+
+
+    //管理员管理
+    ISEXIST_LEADER(51,"此账户已被使用"),
 
 ;
     private Integer code;

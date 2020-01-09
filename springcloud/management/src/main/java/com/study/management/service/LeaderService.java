@@ -1,7 +1,7 @@
-package com.study.base.service;
+package com.study.management.service;
 
-import com.study.base.domain.dto.Leader;
-import com.study.base.domain.request.LeaderListReqVo;
+import com.study.management.domain.dto.Leader;
+import com.study.management.domain.request.LeaderListReqVo;
 import com.study.common.base.Result;
 
 /**

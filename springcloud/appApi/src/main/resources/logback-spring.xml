@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
     <!--web信息 -->
-    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <include resource="org/springframework/boot/logging/logback/management.xml" />
     <property name="LOG_PATH" value="D:/Logs/appapi"/>
     <!-- 彩色日志 -->
     <!-- 彩色日志依赖的渲染类 -->
@@ -163,7 +163,7 @@
 
     <!--开发环境:打印控制台-->
     <springProfile name="dev">
-        <logger name="com.study.base.mapper" level="debug"/>
+        <logger name="com.study.management.mapper" level="debug"/>
     </springProfile>
 
     <root level="info">

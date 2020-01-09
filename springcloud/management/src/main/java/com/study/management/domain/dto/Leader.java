@@ -1,14 +1,9 @@
-package com.study.base.domain.dto;
+package com.study.management.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.util.Date;
 
-@Entity
-@Table(name = "w_leader")
 public class Leader {
     /**
      * 主键
@@ -53,27 +48,23 @@ public class Leader {
     /**
      * 创建人
      */
-    @Column(name = "create_by")
     private String createBy;
 
     /**
      * 创建时间
      */
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "create_time")
     private Date createTime;
 
     /**
      * 更新人
      */
-    @Column(name = "update_by")
     private String updateBy;
 
     /**
      * 更新时间
      */
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    @Column(name = "update_time")
     private Date updateTime;
 
     /**
