@@ -1,10 +1,8 @@
-package com.study.base.service;
+package com.study.management.service;
 
-import com.study.base.web.LoginController;
 import com.study.common.base.Result;
 import com.study.common.vo.base.CurrentUser;
 import com.study.common.vo.base.LoginReqVo;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @ClassName : LoginService
@@ -23,7 +21,10 @@ public interface LoginService {
      * @param loginReqVo
      * @return
      */
-    Result login( LoginReqVo loginReqVo);
+    Result login(LoginReqVo loginReqVo);
+
+
+    Result exist();
 
 
     /**
@@ -32,12 +33,4 @@ public interface LoginService {
      * @return
      */
     Result<CurrentUser> check(String token);
-
-    /**
-     * 退出登录
-     * @param token
-     * @return
-     */
-    Result exist(String token);
-
 }

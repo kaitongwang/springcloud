@@ -1,11 +1,13 @@
-package com.study.base.web;
+package com.study.management.web;
 
-import com.study.base.service.LoginService;
 import com.study.common.base.Result;
-import com.study.common.vo.base.CurrentUser;
 import com.study.common.vo.base.LoginReqVo;
+import com.study.management.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName : LoginController
@@ -18,26 +20,19 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("/login")
 public class LoginController {
 
 
     @Autowired
     private LoginService loginService;
-    @PostMapping("/login")
+    @PostMapping("/login/login")
     public Result login(@RequestBody LoginReqVo LoginReqVo){
      return     loginService.login(LoginReqVo);
     }
 
-
-    @PostMapping("/check")
-    public Result<CurrentUser> check(@RequestParam("token") String token){
-        return     loginService.check(token);
+    @PostMapping("/wkt/login/exist")
+    public Result exist(){
+         return loginService.exist();
     }
 
-
-    @PostMapping("/exist")
-    public Result exist(@RequestParam("token") String token){
-        return     loginService.exist(token);
-    }
 }

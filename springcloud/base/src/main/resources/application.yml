@@ -3,6 +3,18 @@ server:
 spring:
   application:
     name: base
+  redis:
+    host: www.wkt.red
+    port: 6379
+    password: love54542946
+    timeout: 2000
+    database: 0  # 数据库
+    jedis:
+      pool:
+        max-active: 50  # 最大连接数
+        max-wait: 3000   # 连接超时间
+        max-idle: 20    # 最大连接空闲数
+        min-idle: 10   # 最小连接空闲数
   datasource:
     username: root
     password: love54542946

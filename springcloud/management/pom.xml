@@ -55,11 +55,11 @@
             <artifactId>spring-boot-admin-server</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.github.wilson-he</groupId>
-            <artifactId>swagger2-spring-boot-starter</artifactId>
-            <version>1.0.3.RELEASE</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.github.wilson-he</groupId>-->
+<!--            <artifactId>swagger2-spring-boot-starter</artifactId>-->
+<!--            <version>1.0.3.RELEASE</version>-->
+<!--        </dependency>-->
 
     </dependencies>
     <build>

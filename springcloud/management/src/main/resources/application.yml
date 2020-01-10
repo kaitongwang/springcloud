@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: management
+  main:
+    allow-bean-definition-overriding: true
 eureka:
   instance:
     hostname: 127.0.0.1

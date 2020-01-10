@@ -13,7 +13,8 @@ public enum ResultStatus {
 
 
     SUCCESS(0,"操作成功"),
-
+    TOKEN_EXPIRED(6,"非法登录"),
+    LOGIN_NOUSER(8,"登录过期"),
     SYSTEM_ERROR(9,"系统休息了"),
 
     //登录控制器
