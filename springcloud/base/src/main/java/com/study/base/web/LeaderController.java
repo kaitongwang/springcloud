@@ -3,12 +3,10 @@ package com.study.base.web;
 import com.study.base.domain.dto.Leader;
 import com.study.base.domain.request.LeaderListReqVo;
 import com.study.base.service.LeaderService;
+import com.study.base.service.TaskService;
 import com.study.common.base.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @ClassName : LeaderController
@@ -27,6 +25,9 @@ public class LeaderController {
     @Autowired
     private LeaderService leaderService;
 
+    @Autowired
+    private TaskService taskService;
+
     @PostMapping("/getList")
     public Result getList(@RequestBody LeaderListReqVo leaderListReqVo){
 
@@ -37,5 +38,11 @@ public class LeaderController {
     @PostMapping ("add")
     public Result add(@RequestBody Leader leader){
         return  leaderService.add(leader);
+    }
+
+    @GetMapping("/send")
+    public Result send (){
+        taskService.sendEmail();
+        return Result.returnSuccess();
     }
 }

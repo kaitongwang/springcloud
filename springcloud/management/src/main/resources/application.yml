@@ -19,22 +19,12 @@ eureka:
         prefer-ip-address: true
         ip-address: 127.0.0.1
         instance-id: ${spring.application.name}:${server.port}
-swagger:
-  print-init: true
-  enabled: true
-  docket:
-    base-package: com.study.management.web
-    api-info:
-      contact:
-        email: 1825793811@qq.com
-        name: Kt.w
-        url:  https://github.com/kaitongwang
-      title: 基础数据api
-      version: 1.1.0
-      description: Api 文档
-    host: 127.0.0.1
-    path-mapping: /
-
+aliyun:
+  oss:
+    endPoint: http://oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: LTAIOhuGwfpXp9J2
+    accessKeySecret: Fib7e89aT3a88O4sr241gPhhr7q3MG
+    bucketName: wkt-wtt
 feign:
    hystrix:
     enabled: true
