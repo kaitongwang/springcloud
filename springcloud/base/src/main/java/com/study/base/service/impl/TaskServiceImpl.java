@@ -114,6 +114,11 @@ public class TaskServiceImpl implements TaskService {
                             "    <h3>\n" +
                             "\n" +
                             "         温馨提示，历史上的今天发生了什么 ？\n" +
+                            "<br>\n" +
+                            "\n" +
+                            "        <h5> <a target=\"_blank\" href=\"http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ZwwGDhMICQBJEAYJACcWFkkECAo\"\n" +
+                            "                style=\"text-decoration:none;\">联系管理员</a>\n" +
+                            "        </h5>"+
                             "    </h3>\n" +
                             "\n";
                     int i = 1;

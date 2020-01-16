@@ -17,4 +17,7 @@ public interface EmailMapper extends BaseMapper<Email> {
      * @return
      */
     List<Email> getSendEmailList();
+
+
+    List<Email>  getList();
 }

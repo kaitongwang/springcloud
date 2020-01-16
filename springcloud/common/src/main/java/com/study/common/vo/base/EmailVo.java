@@ -1,13 +1,19 @@
-package com.study.base.domain.dto.entity;
+package com.study.common.vo.base;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
 import java.util.Date;
 
-@Table(name = "w_email")
-public class Email {
+/**
+ * @ClassName : EmailVo
+ * @description :
+ * @Author : wangkaitong
+ * @Date : 2020/1/16
+ * @Version : 1.0
+ * @Since : 1.0
+ * @Copyright : 四川去哪游科技有限公司
+ */
+public class EmailVo {
     /**
      * 主键id
      */
@@ -27,26 +33,22 @@ public class Email {
      * 创建人
 
      */
-    @Column(name = "create_by")
     private String createBy;
 
     /**
      * 创建时间
      */
-    @Column(name = "create_time")
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     /**
      * 更新人
      */
-    @Column(name = "update_by")
     private String updateBy;
 
     /**
      *  更新时间
      */
-    @Column(name = "update_time")
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
