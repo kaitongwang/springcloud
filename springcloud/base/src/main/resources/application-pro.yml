@@ -1,0 +1,109 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: base
+  redis:
+    host: www.wkt.red
+    port: 6379
+    password: love54542946
+    timeout: 2000
+    database: 0  # 数据库
+    jedis:
+      pool:
+        max-active: 50  # 最大连接数
+        max-wait: 3000   # 连接超时间
+        max-idle: 20    # 最大连接空闲数
+        min-idle: 10   # 最小连接空闲数
+  datasource:
+    username: root
+    password: love54542946
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://www.wkt.red:3306/base?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&useAffectedRows=true&zeroDateTimeBehavior=convertToNull
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #初始化数据库连接池
+      initial-size: 10
+      # 最小数据库连接池连接数
+      min-idle: 8
+      # 最大数据库连接池
+      max-active: 15
+      # 配置获取连接等待超时的时间
+      max-wait: 50000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+
+  mail:
+    host: smtp.qq.com
+    username: 1825793811@qq.com
+    password: aaruournfvllegff
+    default-encoding: utf-8
+    port: 587
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka
+      instance:
+        lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+        lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+        prefer-ip-address: true
+        ip-address: 127.0.0.1
+        instance-id: ${spring.application.name}:${server.port}
+
+
+swagger:
+  print-init: true
+  enabled: true
+  docket:
+    base-package: com.study.base.web
+    api-info:
+      contact:
+        email: 1825793811@qq.com
+        name: Kt.w
+        url:  https://github.com/kaitongwang
+      title: 基础数据api
+      version: 1.1.0
+      description: Api 文档
+    host: 127.0.0.1
+    path-mapping: /
+
+
+# 通用mapper
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper
+  identity: mysql
+#  sql mapper
+mybatis:
+  mapper-locations: classpath:/mybatis/*.xml
+  base-packages: com.study.base.mapper
+
+#  分页插件
+pagehelper:
+  reasonable: true
+  helper-dialect: mysql
+  support-methods-arguments: true
+#日志配置
+logging:
+  config: classpath:logback-spring-pro.xml
+  level:
+    root: info
+    com:
+      htlb:
+        log:
+          mapper: debug
+  file: D:/Logs/base/output.log
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
