@@ -21,10 +21,10 @@ eureka:
         instance-id: ${spring.application.name}:${server.port}
 aliyun:
   oss:
-    endPoint: http://oss-cn-hangzhou.aliyuncs.com
-    accessKeyId: LTAIOhuGwfpXp9J2
-    accessKeySecret: Fib7e89aT3a88O4sr241gPhhr7q3MG
-    bucketName: wkt-wtt
+    endPoint:111111111
+    accessKeyId: LT19J2
+    accessKeySecret: Fib7e1
+    bucketName: wkt-11111tt
 feign:
    hystrix:
     enabled: true
